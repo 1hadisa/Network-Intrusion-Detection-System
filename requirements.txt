@@ -1,0 +1,7 @@
+This project only uses the Python standard library (json, subprocess, pathlib, datetime).
+No external Python packages are required.
+The only external dependency is Suricata itself, which is not a Python package
+and must be installed separately on your system:
+https://suricata.io/download/
+Python version required: 3.8+
+ 
