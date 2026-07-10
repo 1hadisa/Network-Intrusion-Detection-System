@@ -3,7 +3,7 @@ import subprocess
 from pathlib import Path
 from datetime import datetime
 
-# ---- SETTINGS: change these paths to match your setup ----
+# change these paths to match your setup 
 CAPTURE_FOLDER = Path(r"C:\Users\User\Documents\captures")   # folder full of .pcapng files
 SURICATA_PATH = r"C:\Program Files\Suricata\suricata.exe"
 CONFIG_PATH = r"C:\Program Files\Suricata\suricata.yaml"
@@ -24,7 +24,7 @@ def print_all_alerts():
     if not EVE_FILE.exists():
         print("No eve.json found — Suricata may not have produced any logs.")
         return
-    # Open the incident log once in "append" mode, so each run adds to it
+    # open the incident log once in "append" mode, so each run adds to it
     # instead of overwriting previous runs' history.
     with open(INCIDENT_LOG, "a") as log:
         log.write(f"\n----- Run at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} -----\n")
@@ -49,7 +49,7 @@ def print_all_alerts():
 
 def main():
     OUTPUT_FOLDER.mkdir(parents=True, exist_ok=True)
-    # Delete the old eve.json first so we only see alerts from THIS run,
+    # delete the old eve.json first so we only see alerts from THIS run,
     # not alerts left over from a previous analysis.
     if EVE_FILE.exists():
         EVE_FILE.unlink()
